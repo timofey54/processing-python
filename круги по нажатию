@@ -1,0 +1,14 @@
+def setup():
+    size(500,500)
+def draw():
+    pass
+def mouseDragged():
+    circle(mouseX,mouseY,50)
+    
+другой вариант не по вождению мышки а по обычному нажатию
+def setup():
+    size(500,500)
+def draw():
+    pass
+def mousePressed():
+    circle(mouseX,mouseY,50)
