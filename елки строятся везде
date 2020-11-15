@@ -1,0 +1,10 @@
+def setup():
+    size(500,500)
+def draw():
+    fill("#08FF53")
+    translate(random(0,250),random(0,250))
+    triangle(250,0,240,20,260,20)
+    translate(0,20)
+    triangle(250,0,240,20,260,20)
+    translate(0,20)
+    triangle(250,0,240,20,260,20)
