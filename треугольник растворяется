@@ -1,6 +1,7 @@
 scl=1
 clr=0
 def setup():
+    background(255)
     size(500,500)
 def draw():
     global scl,clr
