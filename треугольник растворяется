@@ -1,0 +1,12 @@
+scl=1
+clr=0
+def setup():
+    size(500,500)
+def draw():
+    global scl,clr
+    translate(250,250)
+    stroke(clr)
+    scale(scl)
+    triangle(0,10,-10,0,10,0)
+    scl=scl+0.1
+    clr=clr+1
