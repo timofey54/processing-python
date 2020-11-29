@@ -1,0 +1,12 @@
+x=0
+y=0
+def setup():
+    size(500,500)
+def draw():
+    translate(250,250)
+    global x,y
+    rotate(radians(y))
+    circle(x,0,10)
+    x=x+0.05
+    y=y+0.4
+#Вначале rotate,потом circle
