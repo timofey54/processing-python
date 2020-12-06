@@ -1,0 +1,36 @@
+x1rect=600
+x2rect=610
+x3rect=635
+x4rect=610
+y1rect=350
+y2rect=360
+y3rect=360
+y4rect=380
+def setup():
+    size(2000,700)
+def draw():
+    background(255)
+    translate(-590,300)
+    strokeWeight(0)
+    fill("#464195")
+    rect(x1rect,y1rect,50,50)
+    fill("#05FF41")
+    rect(x2rect,y2rect,5,5)
+    rect(x3rect,y3rect,5,5)
+    rect(x4rect,y4rect,30,5)# В DEF SETUP НЕ НАДО ПИСАТЬ РИСОВАНИЕ,ЕГО НАДО ПИСАТЬ В DEF DRAW
+def keyPressed():
+    if key == ' ':
+        global x1rect,x2rect,x3rect,x4rect,y1rect,y2rect,y3rect,y4rect
+        x1rect=x1rect+0
+        x2rect=x2rect+0
+        x3rect=x3rect+0
+        x4rect=x4rect+0
+        y1rect=y1rect-10
+        y2rect=y2rect-10   
+        y3rect=y3rect-10
+        y4rect=y4rect-10
+        delay(5)
+        y1rect=y1rect+10
+        y2rect=y2rect+10   
+        y3rect=y3rect+10
+        y4rect=y4rect+10
