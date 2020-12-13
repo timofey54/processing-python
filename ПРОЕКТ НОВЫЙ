@@ -6,10 +6,13 @@ y1rect=350
 y2rect=360
 y3rect=360
 y4rect=380
+move=-1
+jump=False
 def setup():
     size(2000,700)
 def draw():
-    background(255)
+    background(0)
+    global jump,move,y4rect,y3rect,y2rect,y1rect,x1rect,x2rect,x3rect,x4rect
     translate(-590,300)
     strokeWeight(0)
     fill("#464195")
@@ -17,20 +20,35 @@ def draw():
     fill("#05FF41")
     rect(x2rect,y2rect,5,5)
     rect(x3rect,y3rect,5,5)
-    rect(x4rect,y4rect,30,5)# В DEF SETUP НЕ НАДО ПИСАТЬ РИСОВАНИЕ,ЕГО НАДО ПИСАТЬ В DEF DRAW
+    rect(x4rect,y4rect,30,5)# В DEF SETUP НЕ НАДО ПИСАТЬ РИСОВАНИЕ,ЕГО НАДО ПИСАТЬ В DEF DRAW 
+    if jump == True:
+        if move == -1:
+            y1rect=y1rect-10
+            y2rect=y2rect-10   
+            y3rect=y3rect-10
+            y4rect=y4rect-10
+            if y1rect <= 100:
+                move = +1
+        else:
+            y1rect=y1rect+10
+            y2rect=y2rect+10   
+            y3rect=y3rect+10
+            y4rect=y4rect+10
+            if y4rect >= 380:
+                move = -1
+                jump = False
 def keyPressed():
-    if key == ' ':
-        global x1rect,x2rect,x3rect,x4rect,y1rect,y2rect,y3rect,y4rect
-        x1rect=x1rect+0
-        x2rect=x2rect+0
-        x3rect=x3rect+0
-        x4rect=x4rect+0
-        y1rect=y1rect-10
-        y2rect=y2rect-10   
-        y3rect=y3rect-10
-        y4rect=y4rect-10
-        delay(5)
-        y1rect=y1rect+10
-        y2rect=y2rect+10   
-        y3rect=y3rect+10
-        y4rect=y4rect+10
+    global jump,move,y4rect,y3rect,y2rect,y1rect,x1rect,x2rect,x3rect,x4rect
+    if jump == False and key == ' ':
+       jump= True 
+    if keyCode == RIGHT:
+        x1rect=x1rect+10
+        x2rect=x2rect+10   
+        x3rect=x3rect+10
+        x4rect=x4rect+10
+    if keyCode == LEFT:
+        x1rect=x1rect-10
+        x2rect=x2rect-10   
+        x3rect=x3rect-10
+        x4rect=x4rect-10
+#Если что-то подобное делать,то заходить сюда
