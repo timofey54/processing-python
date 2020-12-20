@@ -1,0 +1,27 @@
+x=100
+y=150
+z1=5
+z2=5
+def setup():
+    size(500,500)
+    global x,y,z1,z2
+def draw():
+    strokeWeight(0)
+    background(0)
+    global x,y,z1,z2
+    circle(x,y,50)
+    x+=z1
+    if x>475:
+        z1=-5
+        fill(random(0,255),random(0,255),random(0,255))
+    if x<25:
+        z1=5
+        fill(random(0,255),random(0,255),random(0,255))
+    y+=z2
+    if y>475:
+        z2=-5
+        fill(random(0,255),random(0,255),random(0,255))
+    if y<25:
+        z2=5
+        fill(random(0,255),random(0,255),random(0,255))
+#Можно менять расположение с начала и будет круто
