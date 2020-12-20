@@ -1,0 +1,11 @@
+sizecircle=0
+def setup():
+    size(500,500)
+def draw():
+    background(0)
+    strokeWeight(0)
+    global sizecircle
+    circle(250,250,sizecircle)
+    sizecircle=sizecircle+5
+    if sizecircle==400:
+        sizecircle=0
