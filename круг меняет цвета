@@ -1,0 +1,13 @@
+color = 50
+c = 1
+def setup():
+    size(400,400)
+def draw():
+    global color,c
+    fill(color)
+    circle(200,200,50)
+    color = color + c
+    if color<=0:
+        c = 1
+    if color >=255:
+        c=-1
