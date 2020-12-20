@@ -1,0 +1,15 @@
+x=25
+y=25
+def setup():
+    size(500,500)
+def draw():
+    strokeWeight(0)
+    background(0)
+    global x,y
+    ellipse(x,y,50,50)
+    x=x+4
+    y=y+4
+    if x>=475 and y>=475: 
+        x=25
+        y=25
+    
