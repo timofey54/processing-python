@@ -1,0 +1,13 @@
+w=50
+h=50
+x0=200
+y0=200
+def setup():
+    size(500,500)
+def draw():
+    global w,h,x0,y0
+    rect(x0,y0,w,h)
+def mouseClicked():
+    if mouseX>=x0 and mouseX<=x0+w and mouseY>=y0 and mouseY<=y0+h:
+        background(random(0,255),random(0,255),random(0,255))
+    
