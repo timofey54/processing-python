@@ -1,0 +1,14 @@
+c =20
+def setup():
+    size(500,500)
+def draw():
+    background(0)
+    for step in range(c):     
+        circle(step*20,250,20)
+def mouseClicked():
+    global c
+    if mouseButton==RIGHT:#кстати,это надо запомнить
+        c=c-1
+    if mouseButton==LEFT:
+        c=c+1
+    
