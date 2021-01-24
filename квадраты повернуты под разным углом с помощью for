@@ -1,0 +1,10 @@
+
+size(500,500)
+global rad
+for step in range(10): 
+    push()
+    rotate(radians(5*step))
+    rect(0,0,50,50)
+    pop()
+    translate(50,0)
+    #надо чаще думать о умножении  переменной на число
