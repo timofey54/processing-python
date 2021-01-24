@@ -1,0 +1,7 @@
+rad=0
+size(500,500)
+global rad
+for step in range(10): 
+    rect(0,0,50,50)
+    translate(50,0)
+    rotate(radians(20))
