@@ -1,0 +1,17 @@
+x=0
+y=0
+col = 0 
+def setup():
+    colorMode(HSB,360,100,100)
+    size(500,500)
+    noStroke()
+def draw():
+    translate(250,250)
+    global x,y,col
+    rotate(radians(y))
+    circle(x,0,10)
+    fill(col,100,100)
+    col+=0.05
+    x=x+0.05
+    y=y+0.4
+#Вначале rotate,потом circle
