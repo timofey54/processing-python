@@ -1,0 +1,8 @@
+def setup():
+    size(500,500)
+def draw():
+    y=500
+    background(0)
+    while mouseY<y:
+        rect(mouseX,y,50,50)
+        y=y-50
