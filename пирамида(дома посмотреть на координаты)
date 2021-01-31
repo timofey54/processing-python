@@ -1,0 +1,8 @@
+def setup():
+    size(1000,1000)
+    for y in range(8):
+        for x in range(-50*y,50*y,50):
+            push()
+            translate(500,25)
+            circle(x,y*50,50)
+            pop()
