@@ -1,0 +1,21 @@
+t=11 #можно t менять
+d='black'
+def setup():
+    size(t*50,t*50)
+    global d
+    for x in range(t):
+        for y in range(t):
+            rect(x*50,y*50,50,50)
+            if d=='black':
+                fill(0)
+                d='white'
+            elif d=='white':
+                fill(255)
+                d='black'
+        if t%2==0:  #% делит
+            if d=='black':
+                fill(0)
+                d='white'
+            elif d=='white':
+                fill(255)
+                d='black'
