@@ -1,0 +1,4 @@
+size(400,400)
+for x in range(8):
+    for y in range(8):
+        rect(x*50,y*50,50,50)
