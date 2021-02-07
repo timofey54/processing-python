@@ -1,0 +1,14 @@
+y=[0,0,0,0,0]
+dy=[6,3,9,5,7]
+i=0
+def setup():
+    size(500,500)
+def draw():
+    noStroke()
+    background(0)
+    global y,dy
+    for i in range(len(y)):
+         circle(i*50,y[i],30)
+         y[i]=y[i]+dy[i]
+         if y[i]>=500:
+            y[i]=0
