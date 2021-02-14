@@ -1,0 +1,19 @@
+x=[]
+word=[]
+def setup():
+    size(1000,500)
+def draw():
+    noStroke()
+    fill("#09B73C")
+    rect(0,0,500,500)
+    fill("#4D3706")
+    rect(1000,500,500,500)
+    for index in range(len(x)):
+        text(x[index],index*20,10)
+    for index in range(len(word)):
+        text(word[index],width/2,30+index*30)
+def keyPressed():
+    x.append(key)
+    if key==ENTER:
+        word.append(''.join(x))
+        del x[len(x)]
