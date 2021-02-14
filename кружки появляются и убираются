@@ -1,0 +1,17 @@
+x=[]
+y=[]
+def setup():
+    size(500,500)
+def draw():
+    background(0)
+    for index in range(len(x)):
+        circle(x[index],y[index],15)
+def mouseClicked(): 
+    global x,y
+    if mouseButton==LEFT:
+        x.append(mouseX)
+        y.append(mouseY)
+    if mouseButton==RIGHT:
+        if x!=[] and y!=[]:
+            del x[len(x)-1]
+            del y[len(y)-1]
