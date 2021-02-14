@@ -1,0 +1,25 @@
+x=[]
+y=[]
+rt=0
+def setup():
+    size(1000,500)
+    rectMode(CENTER)
+def draw():
+    global rt
+    background(0)
+    for index in range(len(x)):
+        push()
+        translate(x[index],y[index])
+        rotate(radians(rt))
+        square(0,0,15)#квадрат это square
+        pop()
+    rt=rt+3
+def mouseClicked(): 
+    global x,y
+    if mouseButton==LEFT:
+        x.append(mouseX)
+        y.append(mouseY)
+    if mouseButton==RIGHT:
+        if x!=[] and y!=[]: # len(x) > 0
+            del x[len(x)-1]
+            del y[len(y)-1]
