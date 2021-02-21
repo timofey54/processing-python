@@ -1,0 +1,24 @@
+lamp=[]
+activeIndex=0
+def setup():
+    global lamp
+    #lampOn=loadImage("on.jpg")
+    #lampOff=loadImage("off.jpg")
+    lamp.append(loadImage("on.jpg"))
+    lamp.append(loadImage("off.jpg"))
+    size(500,500)
+    #image(lampOff,50,0)
+    background(0)
+def draw():
+    global lamp
+    fill("#BF1B1B")
+    image(lamp[activeIndex],50,0)
+    square(50,210,50)
+    square(400,210,50)
+def mouseClicked():
+    background(0)
+    global activeIndex
+    if mouseX>50 and mouseX<100 and mouseY>210 and mouseY<260 and activeIndex!=0:
+        activeIndex-=1
+    if mouseX>400 and mouseX<450 and mouseY>210 and mouseY<260 and activeIndex!=len(lamp)-1:
+        activeIndex+=1
