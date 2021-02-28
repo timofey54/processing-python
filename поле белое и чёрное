@@ -1,0 +1,22 @@
+lst=[[0,0,0],
+     [0,0,0,0,0],
+     [0,0,0,0],
+     [0,0,0,0]]
+x=lst[0][1]
+def setup():
+    size(500,500)
+def draw():
+    for y in range(len(lst)):
+        for x in range(len(lst[y])):
+            if lst[y][x]==1:
+                fill(255)
+                rect(x*50,y*50,50,50)
+            if lst[y][x]==2:
+                fill("#09317E")
+                rect(x*50,y*50,50,50)
+            elif lst[y][x]==0:
+                fill(0)
+                rect(x*50,y*50,50,50)
+            if mousePressed:
+                if mouseX>=x*50 and mouseY>=y*50 and mouseX<=x*50+50 and mouseY<=y*50+50:
+                    lst[y][x]=1
