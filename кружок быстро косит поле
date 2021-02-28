@@ -1,0 +1,50 @@
+lst=[[0,0,0,0,0,0,0,0,0,0],
+     [0,0,0,0,0,0,0,0,0,0],
+     [0,0,0,0,0,0,0,0,0,0],
+     [0,0,0,0,0,0,0,0,0,0],
+     [0,0,0,0,0,0,0,0,0,0],
+     [0,0,0,0,0,0,0,0,0,0],
+     [0,0,0,0,0,0,0,0,0,0],
+     [0,0,0,0,0,0,0,0,0,0],
+     [0,0,0,0,0,0,0,0,0,0],
+     [0,0,0,0,0,0,0,0,0,0]]
+x=lst[0][1]
+x1=25
+x2=25
+i=1
+def setup():
+    size(500,500)
+def draw():
+    for y in range(len(lst)):
+        for x in range(len(lst[y])):
+            if lst[y][x]==1:
+                fill(255)
+                rect(x*50,y*50,50,50)
+            if lst[y][x]==2:
+                fill("#09317E")
+                rect(x*50,y*50,50,50)
+            elif lst[y][x]==0:
+                fill(0)
+                rect(x*50,y*50,50,50)
+    fill(255)
+    circle(x1,x2,50)
+def keyPressed():
+    global x1,x2,lst,i
+    if keyCode==RIGHT:
+        x1=x1+50
+    if keyCode==LEFT:
+        x1=x1-50
+    if keyCode==UP:
+        x2=x2-50
+    if keyCode==DOWN:
+        x2=x2+50
+    if key==' ':
+        if i==2:
+            i=1
+        elif i ==1:
+            i=2
+    if i==2:
+        for y in range(len(lst)):
+            for x in range(len(lst[y])):
+                if x1>=x*50 and x2>=y*50 and x1<=x*50+50 and x2<=y*50+50:
+                    lst[y][x]=1
