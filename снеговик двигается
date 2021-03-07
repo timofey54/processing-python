@@ -1,0 +1,28 @@
+x=0
+y=0
+def drawSM(x,y,z,s):
+    translate(x,y)
+    scale(s)
+    x = 0
+    y = 0
+    circle(x,y-40,z+50)
+    circle(x,y+70,z+100)
+    circle(x,y+200,z+200)
+    line(x-220,y-70,x,y+60)
+    line(x+10,y+60,x+200,y-60)
+def setup():
+    size(500,500)
+def draw():
+    strokeWeight(0)
+    translate(50,0)
+    drawSM(x,y,50,0.3)
+    global x,y
+    if keyPressed:
+        if keyCode==UP:
+            y=y-1
+        if keyCode==DOWN:
+            y=y+1
+        if keyCode==LEFT:
+            x=x-1
+        if keyCode==RIGHT:                                   
+            x=x+1
