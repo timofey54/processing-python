@@ -1,0 +1,30 @@
+rt=0
+y=[0,0,0,0,0,0,0,0,0,0]
+dy=[7,3,8,5,2,9,6,1,6,4]
+def drawLine():
+    global rt
+    stroke(255)
+    line(0,0,50,0)
+    for i in range(3):
+        line(i*20+10,0,i*20+20,10)
+        line(i*20+10,0,i*20+20,-10)
+    rotate(radians(rt))
+    rt=rt+0.001
+def drawSnow(x,y,s):
+    push()
+    translate(x,y)
+    scale(s)
+    for x in range(8):
+        rotate(radians(45))
+        drawLine()
+    pop()
+def setup():
+    size(500,500)
+def draw():
+    background(0)
+    global y,dy
+    for i in range(len(y)):
+         drawSnow(i*50,y[i],0.4)
+         y[i]=y[i]+dy[i]
+         if y[i]>=500:
+            y[i]=0
