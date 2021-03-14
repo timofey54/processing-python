@@ -1,0 +1,10 @@
+def lst(x):
+    sum=''
+    for index in range(len(x)):
+        sum=sum+x[index]
+    return sum
+def setup():
+    size(500,500)
+def draw():
+    textSize(50)
+    text(lst(["a","b","c","d","e","f","g"]),250,250)
