@@ -1,23 +1,23 @@
 x=[]
 word=[]
-y=0
 def setup():
     size(1000,500)
+    textSize(20)
 def draw():
+    background(255)
     noStroke()
     fill("#09B73C")
     rect(0,0,500,500)
     fill("#4D3706")
     rect(1000,500,500,500)
     for index in range(len(x)):
-        text(x[index],index*30,15)
+        text(x[index],index*15,15)
     for index in range(len(word)):
-        text(word[index],500,y)
+        text(word[index],500,index*20+20)
 def keyPressed():
     global y
     x.append(key)
     if key==ENTER:
-        y=y+15
         word.append(''.join(x))
         for index in range(len(x)):
             del x[len(x)-1]
