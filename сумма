@@ -1,0 +1,9 @@
+def func(x):
+    sum = 0
+    for index in range(len(x)):
+        sum=sum+x[index]
+    return sum
+def setup():
+    size(500,500)
+def draw():
+    text(func([6,8,3,2,8]),250,250)
