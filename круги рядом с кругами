@@ -1,0 +1,16 @@
+def ci(x,z):
+    if z>27:
+        circle(0,0,z)
+        push()
+        translate(-x,0)
+        ci(x/2,z*3/4)
+        pop()
+        push()
+        translate(x,0)
+        ci(x/2,z*3/4)
+        pop()
+def setup():
+    size(500,500)
+def draw():
+    translate(250,250)
+    ci(200,100)
