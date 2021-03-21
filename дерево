@@ -1,0 +1,15 @@
+def re(s):
+    if s>1:
+        line(0,0,0,-s)
+        translate(0,-s)
+        push()
+        rotate(radians(45))
+        re(s*3/4)
+        pop()
+        rotate(radians(-45))
+        re(s*3/4)
+def setup():
+    size(1000,1000)
+def draw():
+    translate(500,600)
+    re(150)
