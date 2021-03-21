@@ -16,8 +16,11 @@ def draw():
         text(word[index],500,index*20+20)
 def keyPressed():
     global y
-    x.append(key)
     if key==ENTER:
         word.append(''.join(x))
         for index in range(len(x)):
             del x[len(x)-1]
+    if key==BACKSPACE:
+        del x[len(x)-1]
+    else:
+        x.append(key)
