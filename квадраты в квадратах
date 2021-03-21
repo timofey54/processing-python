@@ -1,0 +1,11 @@
+def re(z):
+    if z>10:
+        square(0,0,z)
+        rotate(radians(45))
+        re(z/sqrt(2))
+def setup():
+    size(400,400)
+    rectMode(CENTER)
+def draw():
+    translate(200,200)
+    re(200)
