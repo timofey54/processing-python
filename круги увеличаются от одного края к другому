@@ -1,0 +1,8 @@
+def c(x,r):
+    circle(x,250,r)
+    if 250>=r:
+        c(x-30,r+15)
+def setup():
+    size(500,500)
+def draw():
+    c(500,0)
