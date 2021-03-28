@@ -1,0 +1,37 @@
+ball={'x':0,'y':250,'z1':5,'z2':5}
+gol={'x2':200,'y2':495,'rx':120,'ry':4}
+score=0
+def setup():
+    size(500,500)
+    global ball,gol,score
+def draw():
+    strokeWeight(0)
+    background(0)
+    global ball,gol,score
+    circle(ball['x'],ball['y'],50)
+    ball['x']=ball['x']+ball['z1']
+    if ball['x']>475:
+        ball['z1']=-5
+    if ball['x']<25:
+        ball['z1']=5
+    ball['y']=ball['y']+ball['z2']
+    if ball['y']>475:
+        ball['z2']=-5
+    if ball['y']<25:
+        ball['z2']=5
+    fill("#214D0C")
+    rect(gol['x2'],gol['y2'],gol['rx'],gol['ry'])
+    fill(255)
+    if keyPressed:
+        if keyCode==LEFT:
+            gol['x2']=gol['x2']-5
+        if keyCode==RIGHT:
+            gol['x2']=gol['x2']+5
+    if ball['y']+25>= 500:
+        score=0
+        ball['y']=0
+        ball['x']=random(0,500)
+    if ball['y'] + 25>=gol['y2'] and ball['x']>gol['x2'] and ball['x']<gol['rx']+gol['x2']:
+        ball['z2']=-5
+        score=score+1
+    text(score,10,10)
