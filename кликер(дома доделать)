@@ -1,0 +1,13 @@
+score=0
+def setup():
+    size(500,500)
+def draw():
+    fill(0,0,255)
+    rect(235,235,50,50)
+def mouseClicked():
+    global score
+    if mouseX>235 and mouseX<285 and mouseY>235 and mouseY<285:
+        background(0)
+        score=score+1
+        fill(255)
+        text(score,10,10)
