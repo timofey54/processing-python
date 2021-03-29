@@ -24,9 +24,9 @@ def draw():
     fill(255)
     if keyPressed:
         if keyCode==LEFT:
-            gol['x2']=gol['x2']-5
+            gol['x2']=gol['x2']-10
         if keyCode==RIGHT:
-            gol['x2']=gol['x2']+5
+            gol['x2']=gol['x2']+10
     if ball['y']+25>= 500:
         score=0
         ball['y']=0
