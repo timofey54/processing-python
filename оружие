@@ -6,19 +6,19 @@ class Gun:
     def draw1(self):
         rect(self.x,self.y,100,20)
         rect(self.x,self.y,30,60)
-class kruzhok_v_GMD_oruzhii:
+class kruzhok_v_oruzhii:
     def __init__(self,x2,y2):      
         self.x2=x2
         self.y2=y2
     def draw2(self): 
         circle(self.x2,self.y2,10)
     def move(self):
-        circ.x2=circ.x2+5
+        circ.x2=circ.x2+300
 def setup():
     global rec,circ
     fill(0)
     rec=Gun(60,190)
-    circ=kruzhok_v_GMD_oruzhii(70,200)
+    circ=kruzhok_v_oruzhii(70,200)
     size(500,500)
 def draw():
     global rec,circ 
@@ -31,9 +31,9 @@ def draw():
             rec.y=rec.y-4
             circ.y2=circ.y2-4
         if key == ' ':
-            lst_krugov.append(kruzhok_v_GMD_oruzhii(rec.x,rec.y))
-    for circ1 in lst_krugov:
-        circ1.draw2()
-        circ1.move()   
+            lst_krugov.append(kruzhok_v_oruzhii(rec.x+10,rec.y+10))
+    for circ in lst_krugov:
+        circ.draw2()
+        circ.move()   
     rec.draw1()
     circ.draw2()
